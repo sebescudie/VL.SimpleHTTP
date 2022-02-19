@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="ErbPL6pSPphNM77c7cVRaV" LanguageVersion="2021.4.6.835" Version="0.128">
+  <Patch Id="DQApQUF8ADhQWmitYJpHgc">
+    <Canvas Id="Vds5fGSYB3WMgoKwL3Briz" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="EVgDvrzrPaLMufL3WJ4v1F">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="TzqudBqOWbWPZAPq7V1Ejl">
+        <Canvas Id="GNLtwjwYrVgNJKcwLfRw0N" CanvasType="Group">
+          <Node Bounds="125,241,125,19" Id="HKHP7Cmsye9MbnwFSQkLJV">
+            <p:NodeReference LastCategoryFullName="IO.HTTP" LastSymbolSource="VL.SimpleHTTP.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Request (Async)" />
+            </p:NodeReference>
+            <Pin Id="AM2j8n14OUPP6R4oaUWnTF" Name="URL" Kind="InputPin" />
+            <Pin Id="PeG8Xpl0FDiLLWXTcMfC78" Name="Headers" Kind="InputPin" />
+            <Pin Id="T64zymPmfsiMn1QUbDX2DN" Name="Body" Kind="InputPin" />
+            <Pin Id="NVftgadepKZLZMc7NQPm3g" Name="Method" Kind="InputPin" />
+            <Pin Id="H93v3QA47HmL3HfxhaXFNc" Name="Refresh" Kind="InputPin" />
+            <Pin Id="TrQoOgZRKCVOMhe1JbCdFD" Name="Content" Kind="OutputPin" />
+            <Pin Id="HUpadZaBocjLn4wji0BcqM" Name="Raw Bytes" Kind="OutputPin" />
+            <Pin Id="NjmotJETR2uNlCjLexgnEj" Name="Status Code" Kind="OutputPin" />
+            <Pin Id="Ac2PnIPigTJOFSv4w7bsPS" Name="Status Description" Kind="OutputPin" />
+            <Pin Id="Fcnblmfc9Z2NuAehqmGDXm" Name="Is Successful" Kind="OutputPin" />
+            <Pin Id="ASIIwZxItYPNjD2TdKLgkr" Name="On Data" Kind="OutputPin" />
+            <Pin Id="KeMGDtBgnGOMdTC13ILFzQ" Name="In Progress" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Q09z9HgVXXcQOIb1cbv4aq" Comment="URL" Bounds="127,169,355,15" ShowValueBox="true" isIOBox="true" Value="https://hub.dummyapis.com/image?text=bonjour&amp;height=120&amp;width=120">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="DXTscLq8yp0NxIol09uMss" Comment="Refresh" Bounds="247,219,42,15" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Q4HQQHW7xLtNXCU9JwI1sH" Comment="" Bounds="147,410,116,132" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="133,281,34,19" Id="CTfBx9KRGUeOI10LX2xqbS">
+            <p:NodeReference LastCategoryFullName="Collections.Sequence" LastSymbolSource="VL.Collections.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Any" />
+              <CategoryReference Kind="MutableInterfaceType" Name="Sequence" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="HyFzigF7HbuOzrRKEjdJRM" Name="Input" Kind="StateInputPin" />
+            <Pin Id="LYWMWEtBhxXOlRuXSPH6WF" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="133,318,123,66" Id="UFD6gGQ7nBLQcsMYDOsj3Q">
+            <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <Choice Kind="ApplicationStatefulRegion" Name="If" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:NodeReference>
+            <Pin Id="LqagmZw3qIKO67moZLevmp" Name="Condition" Kind="InputPin" />
+            <Patch Id="PBXZOXvjkLXN81SjeuWOLg" ManuallySortedPins="true">
+              <Patch Id="Smfac7iK6MPL8ktrt8sDFl" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="QueFweNrOkfMFEtFpUBvyP" Name="Then" ManuallySortedPins="true" />
+              <Node Bounds="145,343,99,19" Id="AXASSloR2CcMpA5Ttx47DP">
+                <p:NodeReference LastCategoryFullName="Graphics.Skia.Unwrapped.SKImage" LastSymbolSource="VL.Skia.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="FromEncodedData" />
+                  <PinReference Kind="InputPin" Name="Data">
+                    <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Collections.Mutable" LastSymbolSource="VL.Collections.vl">
+                      <Choice Kind="TypeFlag" Name="MutableArray" />
+                      <p:TypeArguments>
+                        <TypeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                          <Choice Kind="TypeFlag" Name="Byte" />
+                        </TypeReference>
+                      </p:TypeArguments>
+                    </p:DataTypeReference>
+                  </PinReference>
+                </p:NodeReference>
+                <Pin Id="ESSyVaq0YYcMjEU4Ubjw8V" Name="Data" Kind="InputPin" />
+                <Pin Id="L0W8snmMvvLMolHRaCqePg" Name="Result" Kind="OutputPin" />
+              </Node>
+            </Patch>
+            <ControlPoint Id="Vvg1lpOQU5rNXwo7NL4i7o" Bounds="147,378" Alignment="Bottom" />
+            <ControlPoint Id="QWsotgNJHm0Nzd32tt7uE9" Bounds="189,325" Alignment="Top" />
+          </Node>
+          <Pad Id="QvRqIZtg80UMYosrlr3KOP" Bounds="75,91,425,31" ShowValueBox="true" isIOBox="true" Value="Requesting an image with an HTTP query">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">15</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="KD5QVNv5QZuNLZwhZzD2vt" Bounds="69,161,29,27" ShowValueBox="true" isIOBox="true" Value="1.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="URoZG2bCSdVNg2kQHTPtiL" Bounds="69,282,29,27" ShowValueBox="true" isIOBox="true" Value="2.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="AKDXQCFzj9ALaQrWTEvZ6o" Bounds="61,594,29,27" ShowValueBox="true" isIOBox="true" Value="1.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="C62jcqlLF1sPGhmZwZjcOT" Bounds="103,600,602,39" ShowValueBox="true" isIOBox="true" Value="API endpoints can return images as well! This endpoint returns a simple image with the text we specify as a parameter. We can also specify the resolution there.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="EWbt9pDMt2UQTwTpp6V5tl" Bounds="103,686,621,39" ShowValueBox="true" isIOBox="true" Value="To retrieve that image, we must enable the Optional &quot;Raw Bytes&quot; output pin. Instead of giving us the string result of the query, it gives us... well, the raw bytes.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="AnN8IQOJeJJNVEzgHdYK9y" Bounds="61,684,29,27" ShowValueBox="true" isIOBox="true" Value="2.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="S8R92v369jbMdUE5qOaa3i" Bounds="69,340,29,27" ShowValueBox="true" isIOBox="true" Value="3.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="KlR2N0M4SmLO0BqSnrto5J" Bounds="102,763,613,19" ShowValueBox="true" isIOBox="true" Value="We do some Skia magic to recompose the image from the raw data we received">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Vgl2aPQpumFPn9jc4WU4QI" Bounds="61,758,29,27" ShowValueBox="true" isIOBox="true" Value="3.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
+        <Patch Id="P0xpbFLI0WYMWqTTk8gaJm" Name="Create" />
+        <Patch Id="Ut09KRhIktcQAmJl3kX010" Name="Update" />
+        <ProcessDefinition Id="SSnBPcfafgpOeOCdaqDOug">
+          <Fragment Id="Q2YTNun9rljOUz5Ppm3koS" Patch="P0xpbFLI0WYMWqTTk8gaJm" Enabled="true" />
+          <Fragment Id="TqKRFxmQVakMAwLaU8lrMW" Patch="Ut09KRhIktcQAmJl3kX010" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="ICam8ZoOIiAPPDVhgDWFjI" Ids="Q09z9HgVXXcQOIb1cbv4aq,AM2j8n14OUPP6R4oaUWnTF" />
+        <Link Id="Sb0azIagfaiPM7ajC8ARQ8" Ids="DXTscLq8yp0NxIol09uMss,H93v3QA47HmL3HfxhaXFNc" />
+        <Link Id="LSDEPGBcjKdPcvTlzdtg1L" Ids="HUpadZaBocjLn4wji0BcqM,ESSyVaq0YYcMjEU4Ubjw8V" />
+        <Link Id="QtroU1Jw6H5NquzxOFnein" Ids="HUpadZaBocjLn4wji0BcqM,HyFzigF7HbuOzrRKEjdJRM" />
+        <Link Id="VXeKlYFT8vAOg6QltEUzZc" Ids="LYWMWEtBhxXOlRuXSPH6WF,LqagmZw3qIKO67moZLevmp" />
+        <Link Id="OIn7Xlth0MoN8b1kIwa12U" Ids="QWsotgNJHm0Nzd32tt7uE9,Vvg1lpOQU5rNXwo7NL4i7o" IsFeedback="true" />
+        <Link Id="FEKFurEYIYzPgn1ob91koK" Ids="L0W8snmMvvLMolHRaCqePg,Vvg1lpOQU5rNXwo7NL4i7o" />
+        <Link Id="P1C4wh0KmxDN8REy36yiuN" Ids="Vvg1lpOQU5rNXwo7NL4i7o,Q4HQQHW7xLtNXCU9JwI1sH" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="OYVlUEiqm5OO2GTXjDy5YJ" Location="VL.CoreLib" Version="2021.4.6" />
+  <NugetDependency Id="IrudDYmisQlQRb6InhZ54e" Location="VL.SimpleHTTP" Version="0.0.0.0" />
+  <NugetDependency Id="QhziyJ29n9LMMEcwUiRzM2" Location="VL.Skia" Version="2021.4.6" />
+</Document>

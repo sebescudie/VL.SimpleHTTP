@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="Nc5RC6QjbyTN6Lm185hyCJ" LanguageVersion="2021.4.6.835" Version="0.128">
+  <Patch Id="Lc7kpo3UJEVPCKyKlqJwP7">
+    <Canvas Id="RAXIwoBDv38OOYriL91QVu" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="Hs0vNS4LES3QYupriY93sQ">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="Iv9Km99ndieOOkguJy05DO">
+        <Canvas Id="BLcDs6NZJLqMIsfNkBExet" CanvasType="Group">
+          <Node Bounds="559,374,105,19" Id="EQGtuGu2QbVNtsRTKT2mlq">
+            <p:NodeReference>
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Request (Async)" />
+            </p:NodeReference>
+            <Pin Id="IGuIJoqbZHqOmtroNqL3Jt" Name="URL" Kind="InputPin" />
+            <Pin Id="O6kuAtXkLJ6OpNlR8K2vfY" Name="Headers" Kind="InputPin" />
+            <Pin Id="TCcMU3HMxV6LMHyzVZJfL9" Name="Body" Kind="InputPin" />
+            <Pin Id="Hr6LJIKpeXkPiJbxRJTmhB" Name="Method" Kind="InputPin" />
+            <Pin Id="EgE0tGDwB6DPNsUOIHCs8k" Name="Refresh" Kind="InputPin" />
+            <Pin Id="RWm5bCB5fe8P1usTedEY16" Name="Content" Kind="OutputPin" />
+            <Pin Id="BqeK3C1dhL3MBkKVGl9ru7" Name="Status Code" Kind="OutputPin" />
+            <Pin Id="VPMmsYvrVu9PWJ9xCdIohM" Name="Status Description" Kind="OutputPin" />
+            <Pin Id="PsR84xxf3ByL3lJ4xqiBfQ" Name="Is Successful" Kind="OutputPin" />
+            <Pin Id="DRUkUgQS1UqOItcYsdEvJf" Name="On Data" Kind="OutputPin" />
+            <Pin Id="TD3oJ7GoCVmMmVgA9Zyg08" Name="In Progress" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="259,374,85,19" Id="OARyuZ0oB9eNa3m6kd7CIL">
+            <p:NodeReference LastCategoryFullName="IO.HTTP" LastSymbolSource="VL.SimpleHTTP.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Request (Blocking)" />
+            </p:NodeReference>
+            <Pin Id="RoWnJMxErKEPtvWg8J2ulp" Name="URL" Kind="InputPin" />
+            <Pin Id="CcycAZ1x4TrNJDzQLiwr9x" Name="Headers" Kind="InputPin" />
+            <Pin Id="BNOKrP80jf2M5v3jBpogzu" Name="Body" Kind="InputPin" />
+            <Pin Id="Iryq4ZSf8NoMcvebHvhJh1" Name="Method" Kind="InputPin" />
+            <Pin Id="C5npkmnmH2WQPpORZIf941" Name="Refresh" Kind="InputPin" />
+            <Pin Id="Joh3YX4MHagNZh0txxWaah" Name="Content" Kind="OutputPin" />
+            <Pin Id="KJL0nP5elAzQIxUpMUjqnA" Name="Status Code" Kind="OutputPin" />
+            <Pin Id="OGd50Wnp4a5N8EI9Ak9VWM" Name="Status Description" Kind="OutputPin" />
+            <Pin Id="LFqswxbGI9IOwLUjBQvpau" Name="Is Successful" Kind="OutputPin" />
+            <Pin Id="QihsgHMBN63Nmay5Iwd5J2" Name="On Data" Kind="OutputPin" />
+          </Node>
+          <Pad Id="GIZ03xB0OUuNK4kv3TvIXn" Bounds="59,89,438,31" ShowValueBox="true" isIOBox="true" Value="Blocking vs async Request nodes">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">15</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="S8Tb9pAsAxxMwEvFQNOGgH" Bounds="59,156,752,78" ShowValueBox="true" isIOBox="true" Value="The Request node allows you to make basic HTTP requests and comes in two flavors : blocking and async. The blocking version will block the mainloop (your patch will freeze) while it's waiting for the result of the request. the async one won't.&#xD;&#xA;&#xD;&#xA;Let's visualize that with an LFO node and a request that purposedly takes a while to complete.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Kusiqi5KwlOOWhChlhNkM3" Comment="URL" Bounds="261,281,244,15" ShowValueBox="true" isIOBox="true" Value="https://hub.dummyapis.com/delay?seconds=2">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="PWyFcHGNSacMaA9VBtOg6i" Comment="Refresh" Bounds="341,354,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="101,327,45,19" Id="NvXuope7O6hQVRRNKBJ7va">
+            <p:NodeReference LastCategoryFullName="Animation" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="LFO" />
+            </p:NodeReference>
+            <Pin Id="NelkkOEqvedNaWwcwvo8kp" Name="Period" Kind="InputPin" />
+            <Pin Id="A2Svov0shJZQbiplpwmhja" Name="Pause" Kind="InputPin" />
+            <Pin Id="BxXHYNzsv5IPWAmolcRFDl" Name="Reset" Kind="ApplyPin" />
+            <Pin Id="N7EXLQ994NVLhVK5GtRkBk" Name="Phase" Kind="OutputPin" />
+            <Pin Id="TyJ9FurKUrpLFWUqbqOTQC" Name="On New Cycle" Kind="OutputPin" />
+            <Pin Id="NWZDWzOqNYZLu5ma5zJ0C3" Name="Cycles" Kind="OutputPin" />
+          </Node>
+          <Pad Id="BCO2WEjc3tvLhOG5pT8G1Z" Comment="" Bounds="103,367,56,31" ShowValueBox="true" isIOBox="true">
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">14</p:fontsize>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Jmwf02EXfvhLa7izYNmUUn" Comment="Refresh" Bounds="661,354,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="PqIcyVUiJllO1XQxcb8j9x" Bounds="212,278,29,27" ShowValueBox="true" isIOBox="true" Value="1.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="RFaEsGjwMM9Lm9523pxDqa" Bounds="212,374,29,27" ShowValueBox="true" isIOBox="true" Value="2.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Bgv8YaAC5DBM6jfAt6Kw17" Bounds="515,374,29,27" ShowValueBox="true" isIOBox="true" Value="3.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="QiMgA8MVDwKMuPa7VjZ5rs" Bounds="75,579,29,27" ShowValueBox="true" isIOBox="true" Value="1.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="QNf3tiCxScfLx5ntq9OeSg" Bounds="116,580,660,39" ShowValueBox="true" isIOBox="true" Value="This endpoint does nothing special, it just delays its response by the number of seconds we give it as a parameter. Can be pretty handy for debug scenarios!">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="JI4hERVpE44P2683RnWSBI" Comment="On Data" Bounds="341,409,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="AsvtC2RV2gEMJji2x1EjfR" Comment="In Progress" Bounds="661,409,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="BXz46sOIEjbOBOSt42OPNy" Comment="On Data" Bounds="641,434,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="TLAegRXbjVxPG1GpmwtKVs" Bounds="75,638,29,27" ShowValueBox="true" isIOBox="true" Value="2.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Pev1Jdz01TsPiWUXehgqZT" Bounds="116,639,660,39" ShowValueBox="true" isIOBox="true" Value="Have a look at the LFO on the left and bang the Refresh pin of this node : you'll see the LFO pauses while we are waiting for the answer.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="UXVtba0yG71NP4pPLsLsxh" Comment="Content" Bounds="261,458,100,44" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="FImDxvARApBO3NEoDc3dgQ" Comment="Content" Bounds="561,458,100,44" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="JhVzActhCB6LxiKkou4Juy" Bounds="77,699,29,27" ShowValueBox="true" isIOBox="true" Value="3.">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="CUWkLMnqvAtOAilIT0cyY8" Bounds="116,700,660,39" ShowValueBox="true" isIOBox="true" Value="Now try the async version : you'll see the LFO does not freeze, and you get a toggle telling you the query is in progress. After two seconds, you get the result normally, but the mainloop was not stopped!">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
+        <Patch Id="QCXMBhqgr9XL2tlT35fVm1" Name="Create" />
+        <Patch Id="CeDaoMwBA0xN3OovzYX7Qu" Name="Update" />
+        <ProcessDefinition Id="LyZFSqcrhK3QFBBCZAqjov">
+          <Fragment Id="UnbmGvPT7SDMGZ6hwCLGRQ" Patch="QCXMBhqgr9XL2tlT35fVm1" Enabled="true" />
+          <Fragment Id="UbDYeT0tKEwQHZ2qTJke7q" Patch="CeDaoMwBA0xN3OovzYX7Qu" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="KhXYuuzHCzrOIKGLCIdmM0" Ids="Kusiqi5KwlOOWhChlhNkM3,RoWnJMxErKEPtvWg8J2ulp" />
+        <Link Id="Hn0J1av1RdzOU53wjSkkff" Ids="PWyFcHGNSacMaA9VBtOg6i,C5npkmnmH2WQPpORZIf941" />
+        <Link Id="BPXkKFmP38YPcBB1vlfdBl" Ids="N7EXLQ994NVLhVK5GtRkBk,BCO2WEjc3tvLhOG5pT8G1Z" />
+        <Link Id="IyxqFJ6R2RXPSpKr3LLZrx" Ids="Kusiqi5KwlOOWhChlhNkM3,IGuIJoqbZHqOmtroNqL3Jt" />
+        <Link Id="F9AMN0JIgC8LVPk74mR4TT" Ids="Jmwf02EXfvhLa7izYNmUUn,EgE0tGDwB6DPNsUOIHCs8k" />
+        <Link Id="TVD3GiBK3YYMSGSh5radaR" Ids="QihsgHMBN63Nmay5Iwd5J2,JI4hERVpE44P2683RnWSBI" />
+        <Link Id="PNI0ex4EZhtLPAXMaEXqay" Ids="TD3oJ7GoCVmMmVgA9Zyg08,AsvtC2RV2gEMJji2x1EjfR" />
+        <Link Id="GCBXgzo88XJOM7ExOqjy1m" Ids="DRUkUgQS1UqOItcYsdEvJf,BXz46sOIEjbOBOSt42OPNy" />
+        <Link Id="E0WWanukH9ILbDXEGUszO1" Ids="Joh3YX4MHagNZh0txxWaah,UXVtba0yG71NP4pPLsLsxh" />
+        <Link Id="UngVFNOG7bGNfpG0ktZlJs" Ids="RWm5bCB5fe8P1usTedEY16,FImDxvARApBO3NEoDc3dgQ" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="S5OVynr6jj9Mls1SJbrhwe" Location="VL.CoreLib" Version="2021.4.6" />
+  <NugetDependency Id="FUxMQdTJ8IZQdmX8aXt9vz" Location="VL.SimpleHTTP" Version="0.0.0.0" />
+</Document>
