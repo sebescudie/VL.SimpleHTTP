@@ -647,6 +647,6 @@
     </Node>
   </Patch>
   <NugetDependency Id="K7oHRdICwk5M2afHeGagru" Location="VL.CoreLib" Version="2021.4.6" />
-  <NugetDependency Id="MZBLKUeZU3QLpaJvANTSvT" Location="RestSharp" Version="106.11.7" />
   <PlatformDependency Id="QX7iOYDTI12OVfr49PJtpY" Location="System" />
+  <NugetDependency Id="HDjxOXI3EmcMM1pqV05JIs" Location="RestSharp" Version="106.15.0" />
 </Document>
