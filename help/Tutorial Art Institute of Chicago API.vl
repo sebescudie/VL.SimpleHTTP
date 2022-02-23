@@ -7,7 +7,7 @@
     ************************ SearchArtworks ************************
 
 -->
-      <Node Name="SearchArtworks" Bounds="103,110" Id="JXoGc7MArJNPnk33GSSjPc" Summary="Searches for artworks in the Art Institute of Chicago's database">
+      <Node Name="SearchArtworks" Bounds="83,138" Id="JXoGc7MArJNPnk33GSSjPc" Summary="Searches for artworks in the Art Institute of Chicago's database">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="ContainerDefinition" Name="Process" />
         </p:NodeReference>
@@ -297,7 +297,7 @@
     ************************ ArtworkSearchResult ************************
 
 -->
-      <Node Name="ArtworkSearchResult" Bounds="150,155" Id="DNvi4AQ9CdlMr9guXu0R6w">
+      <Node Name="ArtworkSearchResult" Bounds="414,133" Id="DNvi4AQ9CdlMr9guXu0R6w">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="RecordDefinition" Name="Record" />
         </p:NodeReference>
@@ -312,78 +312,11 @@
             <ControlPoint Id="MiyGn1JiwQDOWgE0OmZDvF" Bounds="233,198" />
             <ControlPoint Id="Oj1zJyZJOJWNfQAhN1ZRov" Bounds="127,138" />
             <ControlPoint Id="JlG7bBSbmZ4NlfUHdVEaQl" Bounds="127,198" />
-            <!--
-
-    ************************ ParseArtworkSearchResult ************************
-
--->
-            <Node Name="ParseArtworkSearchResult" Bounds="562,143,191,209" Id="GUIQx1k52qkNN1bg5tI4fm">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
-                <Choice Kind="OperationDefinition" Name="Operation" />
-              </p:NodeReference>
-              <Patch Id="RF2xhyKwiZTLZ1iD4zVWyl">
-                <Node Bounds="574,290,90,26" Id="O4HfScMgm3bL2iyOiPuilg">
-                  <p:NodeReference LastCategoryFullName="Main.ArtworkSearchResult" LastSymbolSource="Tutorial Art Institute of Chicago API.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <CategoryReference Kind="RecordType" Name="ArtworkSearchResult" />
-                    <Choice Kind="OperationCallFlag" Name="Create" />
-                  </p:NodeReference>
-                  <Pin Id="DIXxEgPiwt6NAvZe2MRWTw" Name="Id" Kind="InputPin" />
-                  <Pin Id="PkM0DQf4lsdNf5dnjWSdUP" Name="Title" Kind="InputPin" />
-                  <Pin Id="IYJ5ujYRUq2QStpjavJDZw" Name="Alt Text" Kind="InputPin" />
-                  <Pin Id="El4LcBBORtYNecUvUYBRMN" Name="Output" Kind="StateOutputPin" />
-                </Node>
-                <ControlPoint Id="ARnK3VkwOVbMNmb4u78hzF" Bounds="576,335" />
-                <Link Id="O8VP72n9jG7OQMpp7uo2Zb" Ids="El4LcBBORtYNecUvUYBRMN,ARnK3VkwOVbMNmb4u78hzF" />
-                <Link Id="GUvtOJ9beILO31iTwB07Vc" Ids="ARnK3VkwOVbMNmb4u78hzF,E9JwRYa7TMFNXUnZgqMIKc" IsHidden="true" />
-                <Node Bounds="574,187,82,19" Id="Bp62GHwbkk1N0hfIluiW8c">
-                  <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
-                  </p:NodeReference>
-                  <Pin Id="G1QWJ6SGdxANSaSEg6O8Q6" Name="Input" Kind="InputPin" />
-                  <Pin Id="IHi1ii0tuk5OBtTG5eA9sw" Name="Path" Kind="InputPin" DefaultValue="id" />
-                  <Pin Id="JdsfayCODgFPXd8hLxpsLh" Name="Value" Kind="OutputPin" />
-                  <Pin Id="TeYUJG6Q7TgMTg5TYymlO5" Name="Success" Kind="OutputPin" />
-                </Node>
-                <Link Id="NgI1YyRDoagNORffjY7Dd6" Ids="JdsfayCODgFPXd8hLxpsLh,DIXxEgPiwt6NAvZe2MRWTw" />
-                <Node Bounds="616,222,82,19" Id="Rgn9VQys5UHPJxjwtNwamL">
-                  <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
-                  </p:NodeReference>
-                  <Pin Id="LGZKR8LVec4M84McdKmmT4" Name="Input" Kind="InputPin" />
-                  <Pin Id="ES66fbzcY2pNiErKqqi8oV" Name="Path" Kind="InputPin" DefaultValue="title" />
-                  <Pin Id="RIZRVyn5ElgNIVKYaoipR9" Name="Value" Kind="OutputPin" />
-                  <Pin Id="NlLl5KU2ckJPXGg4xQIQ33" Name="Success" Kind="OutputPin" />
-                </Node>
-                <Link Id="FEdb1hgyXkmPNCTH7OO3aZ" Ids="RIZRVyn5ElgNIVKYaoipR9,PkM0DQf4lsdNf5dnjWSdUP" />
-                <ControlPoint Id="USb8vOqldeaOiIJXxKgKKT" Bounds="576,161" />
-                <Link Id="MRZHPgYboLOQFa3B8Vkq0N" Ids="USb8vOqldeaOiIJXxKgKKT,G1QWJ6SGdxANSaSEg6O8Q6" />
-                <Link Id="SNCl9PvIjyLL31h4WlwID5" Ids="KC6S71r1HUnOkGm8PsXG3x,USb8vOqldeaOiIJXxKgKKT" IsHidden="true" />
-                <Link Id="Kq97BuIYdAQO73DtopHXNs" Ids="USb8vOqldeaOiIJXxKgKKT,LGZKR8LVec4M84McdKmmT4" />
-                <Node Bounds="659,257,82,19" Id="SDJuJqCqhMHLEMhWXtndCB">
-                  <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
-                  </p:NodeReference>
-                  <Pin Id="TffU6tVYcivOexoyJTT1wj" Name="Input" Kind="InputPin" />
-                  <Pin Id="AD3Upypw8NiNwtNcbVZ5gU" Name="Path" Kind="InputPin" DefaultValue="thumbnail/alt_text" />
-                  <Pin Id="NSDAnQcfVvDOxCxZyOFltd" Name="Value" Kind="OutputPin" />
-                  <Pin Id="V1wIrfYqyitPjTahcGuiWy" Name="Success" Kind="OutputPin" />
-                </Node>
-                <Link Id="QH9ZrH8MI7YLUE40iY6UAh" Ids="NSDAnQcfVvDOxCxZyOFltd,IYJ5ujYRUq2QStpjavJDZw" />
-                <Link Id="OFKY895gWELNApAqSZfQPa" Ids="USb8vOqldeaOiIJXxKgKKT,TffU6tVYcivOexoyJTT1wj" />
-                <Pin Id="E9JwRYa7TMFNXUnZgqMIKc" Name="Output" Kind="OutputPin" Bounds="388,443" />
-                <Pin Id="KC6S71r1HUnOkGm8PsXG3x" Name="Input" Kind="InputPin" Bounds="415,327" />
-              </Patch>
-            </Node>
             <ControlPoint Id="LpNV6cGUwFMMZIQG5z9ybq" Bounds="177,198" />
           </Canvas>
           <ProcessDefinition Id="AtVFyyYUkAULI4LqEgFBGz" IsHidden="true">
             <Fragment Id="FyGLuIH0PBDL1EFNJksLZI" Patch="QbWJqKBDXhxQSoqusR1WRq" Enabled="true" />
             <Fragment Id="DDwjeKODwlLPxpLMHVi5Qb" Patch="Q0ZAT0vHKhkOVdo81KfnSG" />
-            <Fragment Id="Q9xmtBy5jykP1VPbHD9l1D" Patch="GUIQx1k52qkNN1bg5tI4fm" />
             <Fragment Id="KbwJCFD7PqnOBxvqGRlLKK" Patch="QinNaUxFTKsN9QHHgQ2hwv" />
           </ProcessDefinition>
           <Slot Id="GeP8dnRJVTuPNuiY83WiYB" Name="Alt Text">
@@ -435,7 +368,7 @@
     ************************ GetArtworkInfo ************************
 
 -->
-      <Node Name="GetArtworkInfo" Bounds="103,245" Id="Il68IcLe8plN0viPAyHcVI">
+      <Node Name="GetArtworkInfo" Bounds="83,188" Id="Il68IcLe8plN0viPAyHcVI">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="ContainerDefinition" Name="Process" />
         </p:NodeReference>
@@ -656,7 +589,7 @@
     ************************ ArtworkInfo ************************
 
 -->
-      <Node Name="ArtworkInfo" Bounds="156,290" Id="LM0m8t8B7RiOjLu9tn9E5G">
+      <Node Name="ArtworkInfo" Bounds="414,183" Id="LM0m8t8B7RiOjLu9tn9E5G">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="RecordDefinition" Name="Record" />
         </p:NodeReference>
@@ -674,98 +607,6 @@
             <ControlPoint Id="R1ESrIQP4ZXMbnm9hCY95W" Bounds="378,254" />
             <ControlPoint Id="CFJADxpk6mcNDlP77sKS2H" Bounds="544,164" />
             <ControlPoint Id="CFPgoymFBV0PT3uxcdrzGE" Bounds="544,254" />
-            <!--
-
-    ************************ ParseArtworkInfo ************************
-
--->
-            <Node Name="ParseArtworkInfo" Bounds="628,89,187,278" Id="CpvPB0z70cXMEUTfOUucoJ">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
-                <Choice Kind="OperationDefinition" Name="Operation" />
-              </p:NodeReference>
-              <Patch Id="T6CUZRxG4vNOxMsrQzUXo5">
-                <Node Bounds="641,307,85,26" Id="NVXmCwi5nstPRqSIxX5lia">
-                  <p:NodeReference LastCategoryFullName="Main.ArtworkInfo" LastSymbolSource="Tutorial Art Institute of Chicago API.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <CategoryReference Kind="RecordType" Name="ArtworkInfo" />
-                    <Choice Kind="OperationCallFlag" Name="Create" />
-                  </p:NodeReference>
-                  <Pin Id="JtVJUBmF84zN0vS6YSJ0G2" Name="Id" Kind="InputPin" />
-                  <Pin Id="MGxUdcVPo19P3Xe45VD0RV" Name="Artist" Kind="InputPin" />
-                  <Pin Id="MEZZX95AnOZNwGTbJ9CO4V" Name="Title" Kind="InputPin" />
-                  <Pin Id="KPX2sM0iscmQIXvkFhjeZ9" Name="Image Id" Kind="InputPin" />
-                  <Pin Id="GYRl32WtNfdLWxTbEdYrCW" Name="Alt Text" Kind="InputPin" />
-                  <Pin Id="FYmeZzEKm1MN2OI1Q46Frt" Name="Output" Kind="StateOutputPin" />
-                </Node>
-                <ControlPoint Id="BwVRjtVt3cjNAhAC7NvvlO" Bounds="643,350" />
-                <Link Id="RPiaWNlhBQ5NRMQl0G7kua" Ids="FYmeZzEKm1MN2OI1Q46Frt,BwVRjtVt3cjNAhAC7NvvlO" />
-                <Link Id="JTdlQ0C9SHSPZ3tQeSa3QZ" Ids="BwVRjtVt3cjNAhAC7NvvlO,DVMWF3XMFHPO7rW11PcOmX" IsHidden="true" />
-                <Node Bounds="640,130,82,19" Id="UVkbfnlG6knM5qRXC5r7ot">
-                  <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
-                  </p:NodeReference>
-                  <Pin Id="C7iXFN5gXBAP0i1PsgqDwq" Name="Input" Kind="InputPin" />
-                  <Pin Id="NW87ixURm2KO0HaLVE79M3" Name="Path" Kind="InputPin" DefaultValue="id" />
-                  <Pin Id="GwdRdMtGkxANnwXVpWIJfe" Name="Value" Kind="OutputPin" />
-                  <Pin Id="TfRM1NCKN8hPMczQwLnGJx" Name="Success" Kind="OutputPin" />
-                </Node>
-                <Link Id="JoVpm2Z1O5cOK2rHDK0jk4" Ids="GwdRdMtGkxANnwXVpWIJfe,JtVJUBmF84zN0vS6YSJ0G2" />
-                <ControlPoint Id="KZojs9L4w82OkyHCsBPrLj" Bounds="642,107" />
-                <Link Id="Bw5Jv9UJRrGL6PBdGCqtUm" Ids="KZojs9L4w82OkyHCsBPrLj,C7iXFN5gXBAP0i1PsgqDwq" />
-                <Link Id="CIA3wg6ikn0LjEIA7qTq1A" Ids="O9G71y6DNpeMy9ICvr88Iz,KZojs9L4w82OkyHCsBPrLj" IsHidden="true" />
-                <Node Bounds="661,168,82,19" Id="NMrRd8hZIK6L7qrrqBQTz4">
-                  <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
-                  </p:NodeReference>
-                  <Pin Id="AvNVb0dJCQaPyVSN80aqGz" Name="Input" Kind="InputPin" />
-                  <Pin Id="NdMd4xirsWfOWJzH3MiI6d" Name="Path" Kind="InputPin" DefaultValue="artist_title" />
-                  <Pin Id="BDoDNUfTNawQKJSeOYLIrI" Name="Value" Kind="OutputPin" />
-                  <Pin Id="QbdoS6qafbzNrWJQW6Ug9i" Name="Success" Kind="OutputPin" />
-                </Node>
-                <Link Id="U0zXluOso6VM3ai9DBhFR3" Ids="KZojs9L4w82OkyHCsBPrLj,AvNVb0dJCQaPyVSN80aqGz" />
-                <Link Id="TUyk6hPfYzzNZsfRAYiVdX" Ids="BDoDNUfTNawQKJSeOYLIrI,MGxUdcVPo19P3Xe45VD0RV" />
-                <Node Bounds="681,205,82,19" Id="N7Vpsj4u62fLd9MPOtZINj">
-                  <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
-                  </p:NodeReference>
-                  <Pin Id="CaEDf65GZCBPbxRqNwSVak" Name="Input" Kind="InputPin" />
-                  <Pin Id="Q5LEcZZVvLWLEsycg5pJzP" Name="Path" Kind="InputPin" DefaultValue="title" />
-                  <Pin Id="M4fLXiy6qmbPk82tXik8yL" Name="Value" Kind="OutputPin" />
-                  <Pin Id="OekiUz0Z3BYMgIhi2CWR3R" Name="Success" Kind="OutputPin" />
-                </Node>
-                <Link Id="DLeQIxU7hrZPgbuTRgVSqc" Ids="KZojs9L4w82OkyHCsBPrLj,CaEDf65GZCBPbxRqNwSVak" />
-                <Link Id="SpGsERRtaaFPLVAuAZs140" Ids="M4fLXiy6qmbPk82tXik8yL,MEZZX95AnOZNwGTbJ9CO4V" />
-                <Node Bounds="701,240,82,19" Id="HaiedLdDsYxMdG4Vdt09hh">
-                  <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
-                  </p:NodeReference>
-                  <Pin Id="IQj9TBg6B1ZOYjgTVyZHX0" Name="Input" Kind="InputPin" />
-                  <Pin Id="SQ5pfJkjHs5LwxCwqnxPvA" Name="Path" Kind="InputPin" DefaultValue="image_id" />
-                  <Pin Id="EVlJISb5ScOOgeB0XFrkDo" Name="Value" Kind="OutputPin" />
-                  <Pin Id="TfsEekuEeMiNn8ha62raGy" Name="Success" Kind="OutputPin" />
-                </Node>
-                <Link Id="PEfldeptQL6MOMna2E97m5" Ids="KZojs9L4w82OkyHCsBPrLj,IQj9TBg6B1ZOYjgTVyZHX0" />
-                <Link Id="FjrzzpdYY4jN3aHkvdrAt3" Ids="EVlJISb5ScOOgeB0XFrkDo,KPX2sM0iscmQIXvkFhjeZ9" />
-                <Node Bounds="721,273,82,19" Id="AkKqEvnE1xhOTGpWtdBHzL">
-                  <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
-                  </p:NodeReference>
-                  <Pin Id="U5MU4QUBO5MOMZqLYNfYkB" Name="Input" Kind="InputPin" />
-                  <Pin Id="Pjxl3amFg8GOuWVyWWh9eh" Name="Path" Kind="InputPin" DefaultValue="thumbnail/alt_text" />
-                  <Pin Id="QDIQzaeZ5gHLk5IisynRUs" Name="Value" Kind="OutputPin" />
-                  <Pin Id="HyC79J5d0h0NqGxHaK0d4o" Name="Success" Kind="OutputPin" />
-                </Node>
-                <Link Id="H5BiM4kMZQnPG3158YVu3K" Ids="KZojs9L4w82OkyHCsBPrLj,U5MU4QUBO5MOMZqLYNfYkB" />
-                <Link Id="Vh45CWPeWbpOcZ2ymUo3IS" Ids="QDIQzaeZ5gHLk5IisynRUs,GYRl32WtNfdLWxTbEdYrCW" />
-                <Pin Id="DVMWF3XMFHPO7rW11PcOmX" Name="Output" Kind="OutputPin" Bounds="483,499" />
-                <Pin Id="O9G71y6DNpeMy9ICvr88Iz" Name="Input" Kind="InputPin" Bounds="498,441" />
-              </Patch>
-            </Node>
             <Pad Id="KKPocdhkZ4ALyRWduxhTVY" SlotId="Q6jyTtoUzarO7h33uCWSIS" Bounds="122,194" />
             <ControlPoint Id="Tkm35CVUcTLQNL5POEx71c" Bounds="122,164" />
             <ControlPoint Id="FRgPfKXZcRRLJwX6OdcPEJ" Bounds="122,254" />
@@ -774,7 +615,6 @@
           <ProcessDefinition Id="LpspxfVoFBLPRIXppitole" IsHidden="true">
             <Fragment Id="FtK2kjxlS7rOoUeVY5ChWe" Patch="MyDxNTtDgsOL792DvIZ2NX" Enabled="true" />
             <Fragment Id="Mmbtf9AF8DfL4rW9UVTRZ7" Patch="PHfMtxnEYaoMYJHIeuepX5" />
-            <Fragment Id="OKXIYshmyZPPfbStZvSETL" Patch="CpvPB0z70cXMEUTfOUucoJ" />
             <Fragment Id="UcFUkE6cy6tNS359H7WPlj" Patch="BAhHRjAZDflN6E2SzvbGVh" />
           </ProcessDefinition>
           <Slot Id="Hcr61tdcjhwLXLSoEfyok1" Name="Artist">
@@ -848,7 +688,7 @@
     ************************ GetImage ************************
 
 -->
-      <Node Name="GetImage" Bounds="103,371" Id="PJOj3O9aMO4O7Fh2pBQvXx">
+      <Node Name="GetImage" Bounds="83,238" Id="PJOj3O9aMO4O7Fh2pBQvXx">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="ContainerDefinition" Name="Process" />
         </p:NodeReference>
@@ -1054,7 +894,7 @@
     ************************ ImageGallery ************************
 
 -->
-      <Node Name="ImageGallery" Bounds="105,451" Id="FL9vWyhTmeyLNijC2IsipT">
+      <Node Name="ImageGallery" Bounds="83,389" Id="FL9vWyhTmeyLNijC2IsipT">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="ContainerDefinition" Name="Process" />
         </p:NodeReference>
@@ -1439,7 +1279,7 @@
     ************************ SimpleBangButtion ************************
 
 -->
-      <Node Name="SimpleBangButtion" Bounds="106,521" Id="FNw2Qq9Lnm4Nn7ril6WJk4">
+      <Node Name="SimpleBangButtion" Bounds="83,435" Id="FNw2Qq9Lnm4Nn7ril6WJk4">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="ContainerDefinition" Name="Process" />
         </p:NodeReference>
@@ -1598,6 +1438,166 @@
           <Link Id="OcMGB9uTw8XPWtZvEIjeCD" Ids="VndKCozQyyzLY8vywk2tVM,Vn5PKPBHQMhNiItfabLN10" />
         </Patch>
       </Node>
+      <!--
+
+    ************************ ParseArtworkSearchResult ************************
+
+-->
+      <Node Name="ParseArtworkSearchResult" Bounds="616,327,191,209" Id="RBnTl0COKE4PLcfoddMwC9">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="Fwn0DwGXJHIL2Y9Bb3Qwtm">
+          <Node Bounds="628,474,90,26" Id="OsBWcyGrkg0QakxQa2gF2P">
+            <p:NodeReference LastCategoryFullName="Main.ArtworkSearchResult" LastSymbolSource="Tutorial Art Institute of Chicago API.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="RecordType" Name="ArtworkSearchResult" />
+              <Choice Kind="OperationCallFlag" Name="Create" />
+            </p:NodeReference>
+            <Pin Id="IMdQxVp0uhAOcFtoGHbEaE" Name="Id" Kind="InputPin" />
+            <Pin Id="VG5sgK7wJuOPzA0gt4NzcQ" Name="Title" Kind="InputPin" />
+            <Pin Id="H0Xx5gbaOisNiwoiT4vCdo" Name="Alt Text" Kind="InputPin" />
+            <Pin Id="JSNUCUTzMnUOmMyiHmmGxl" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <ControlPoint Id="CHz0KDwXpuWP2OFlp3dnBR" Bounds="630,519" />
+          <Link Id="FL9kgpZoSPxMlo8rj2pd6o" Ids="JSNUCUTzMnUOmMyiHmmGxl,CHz0KDwXpuWP2OFlp3dnBR" />
+          <Link Id="RyPUtqtJ1H8Lc5MV2CmGnU" Ids="CHz0KDwXpuWP2OFlp3dnBR,OwWPl5qMTMtNeaSYq5kPyf" IsHidden="true" />
+          <Node Bounds="628,371,82,19" Id="GgH18yGAjIrPfZwOymOdPY">
+            <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
+            </p:NodeReference>
+            <Pin Id="Po4YdxlHyupOO8pTZ522HM" Name="Input" Kind="InputPin" />
+            <Pin Id="QuR3DhCpg9PPJXLjZD7GMi" Name="Path" Kind="InputPin" DefaultValue="id" />
+            <Pin Id="FKoBhferGLXLcUuoBctfnT" Name="Value" Kind="OutputPin" />
+            <Pin Id="B1O1J2ryqe2MDmcaiZXVta" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Link Id="QCjNZHE8SgEPvzj8eQbCRH" Ids="FKoBhferGLXLcUuoBctfnT,IMdQxVp0uhAOcFtoGHbEaE" />
+          <Node Bounds="670,406,82,19" Id="JLwUdS934NxNjAGkcDMB86">
+            <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
+            </p:NodeReference>
+            <Pin Id="E14gGtUDT9wN1pNFuBEPuo" Name="Input" Kind="InputPin" />
+            <Pin Id="IwReXH5tqXNPT57CuIhyfb" Name="Path" Kind="InputPin" DefaultValue="title" />
+            <Pin Id="TcMggWbsK8BOkBEyczx8XV" Name="Value" Kind="OutputPin" />
+            <Pin Id="MhOG9UirQGENymAzGiezBA" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Link Id="SFENSwvixnqLuVpXTes22L" Ids="TcMggWbsK8BOkBEyczx8XV,VG5sgK7wJuOPzA0gt4NzcQ" />
+          <ControlPoint Id="EufauAndva5L2HorfRbJKg" Bounds="630,345" />
+          <Link Id="OwBw8neky4MLKwrCVRWtPF" Ids="EufauAndva5L2HorfRbJKg,Po4YdxlHyupOO8pTZ522HM" />
+          <Link Id="QCVIvIX73x0PMUwUjut6R9" Ids="RZbcwa55r6MOVOpr01vVbw,EufauAndva5L2HorfRbJKg" IsHidden="true" />
+          <Link Id="TzeDGz5SNrPLlyL9EiJw7z" Ids="EufauAndva5L2HorfRbJKg,E14gGtUDT9wN1pNFuBEPuo" />
+          <Node Bounds="713,441,82,19" Id="R5zhFgOyLY5LTysSXWSwpb">
+            <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
+            </p:NodeReference>
+            <Pin Id="JncMTuqsxmNLUycviCWv5W" Name="Input" Kind="InputPin" />
+            <Pin Id="Q4UUcwA3jSdOg6VfePJlkB" Name="Path" Kind="InputPin" DefaultValue="thumbnail/alt_text" />
+            <Pin Id="KMiV74gtGicLUUPfyn2VB0" Name="Value" Kind="OutputPin" />
+            <Pin Id="DgeFVnLaWyQLg5ySUqSFTd" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Link Id="IRu5vD3KloJL4zwPniJ5Yp" Ids="KMiV74gtGicLUUPfyn2VB0,H0Xx5gbaOisNiwoiT4vCdo" />
+          <Link Id="JV1VF9vaPcFOmHSQEM47g7" Ids="EufauAndva5L2HorfRbJKg,JncMTuqsxmNLUycviCWv5W" />
+          <Pin Id="OwWPl5qMTMtNeaSYq5kPyf" Name="Output" Kind="OutputPin" Bounds="388,443" />
+          <Pin Id="RZbcwa55r6MOVOpr01vVbw" Name="Input" Kind="InputPin" Bounds="415,327" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ ParseArtworkInfo ************************
+
+-->
+      <Node Name="ParseArtworkInfo" Bounds="394,328,187,278" Id="R51NPKX1wf7QJhdGZXK4q1">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="Kwob4CRgGkmOZ546GLRAMB">
+          <Node Bounds="407,546,85,26" Id="Dg7M6exkd2XLbHmxGDB6wM">
+            <p:NodeReference LastCategoryFullName="Main.ArtworkInfo" LastSymbolSource="Tutorial Art Institute of Chicago API.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="RecordType" Name="ArtworkInfo" />
+              <Choice Kind="OperationCallFlag" Name="Create" />
+            </p:NodeReference>
+            <Pin Id="LPMEaGUPtAGQYVHitSV3WY" Name="Id" Kind="InputPin" />
+            <Pin Id="LCT3PGKUPvlPGu5BLIJ1rB" Name="Artist" Kind="InputPin" />
+            <Pin Id="REw6ZfJEz0QPDNG40Zu1dP" Name="Title" Kind="InputPin" />
+            <Pin Id="Iv16Zl9N3vDMSKpCgY2WTV" Name="Image Id" Kind="InputPin" />
+            <Pin Id="VuspdffamwULIvIiEHnuGd" Name="Alt Text" Kind="InputPin" />
+            <Pin Id="Mi6E06EcMpDLLmH1usxF8h" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <ControlPoint Id="DeE7DNyN7hCPlPtQHqAhLF" Bounds="409,589" />
+          <Link Id="HwK4FHMRXJpLdS1HirOymA" Ids="Mi6E06EcMpDLLmH1usxF8h,DeE7DNyN7hCPlPtQHqAhLF" />
+          <Link Id="K943QmixbnYQICoN1xPFh0" Ids="DeE7DNyN7hCPlPtQHqAhLF,T6iyHzLuhhnLT39dBPK43T" IsHidden="true" />
+          <Node Bounds="406,369,82,19" Id="RK3uw9YEV2fOppfYdWMKpi">
+            <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
+            </p:NodeReference>
+            <Pin Id="RUEXfvDEKPGMfKPnTkFjfQ" Name="Input" Kind="InputPin" />
+            <Pin Id="TYY3K3DL3i3L5KObvIyAKf" Name="Path" Kind="InputPin" DefaultValue="id" />
+            <Pin Id="Ago0vfxju4kNhAGQzc20GI" Name="Value" Kind="OutputPin" />
+            <Pin Id="LwRmA14Ruh7N4aiPuEGcfv" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Link Id="GQt0dt9eLnvLDGzmxjIDqP" Ids="Ago0vfxju4kNhAGQzc20GI,LPMEaGUPtAGQYVHitSV3WY" />
+          <ControlPoint Id="CgbfTu0ie6ZPlRcp8R1RiC" Bounds="408,346" />
+          <Link Id="KMO8CV5YZh4Qdz0wOvxksT" Ids="CgbfTu0ie6ZPlRcp8R1RiC,RUEXfvDEKPGMfKPnTkFjfQ" />
+          <Link Id="KgVCekBPLGPMxZDApf44K0" Ids="D5T7DzXigbFMMEprFLdhZH,CgbfTu0ie6ZPlRcp8R1RiC" IsHidden="true" />
+          <Node Bounds="427,407,82,19" Id="GbPXRTBrDAhMxxXImwRuZ3">
+            <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
+            </p:NodeReference>
+            <Pin Id="CsG0Cdk8HYbMhIx4xNXiPR" Name="Input" Kind="InputPin" />
+            <Pin Id="F9Zg1Rl2NiVQHgASqKNCBI" Name="Path" Kind="InputPin" DefaultValue="artist_title" />
+            <Pin Id="GdhA6C8dAExLvCTbbMa0sb" Name="Value" Kind="OutputPin" />
+            <Pin Id="NwlOrjIr4L4Nm8qxqOapO8" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Link Id="Sb9SuTQx4LqNR08HKb4s4w" Ids="CgbfTu0ie6ZPlRcp8R1RiC,CsG0Cdk8HYbMhIx4xNXiPR" />
+          <Link Id="PRylUvoPvHwNh11ThaMVWz" Ids="GdhA6C8dAExLvCTbbMa0sb,LCT3PGKUPvlPGu5BLIJ1rB" />
+          <Node Bounds="447,444,82,19" Id="FRNse1KI8ZDQc4DJthRAlU">
+            <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
+            </p:NodeReference>
+            <Pin Id="RWRj32gMQD0OV4qy27TQkC" Name="Input" Kind="InputPin" />
+            <Pin Id="F1i2Zu4mCq8Mv991YHdx1q" Name="Path" Kind="InputPin" DefaultValue="title" />
+            <Pin Id="U9Y7kTgwhAnPHb4kPFUBUk" Name="Value" Kind="OutputPin" />
+            <Pin Id="HAugRgULSgQMvAgk2BiaDh" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Link Id="DIjOTkbSgWOOuL641aCRN6" Ids="CgbfTu0ie6ZPlRcp8R1RiC,RWRj32gMQD0OV4qy27TQkC" />
+          <Link Id="OoImxGdcIkEMhMpFbi7XQI" Ids="U9Y7kTgwhAnPHb4kPFUBUk,REw6ZfJEz0QPDNG40Zu1dP" />
+          <Node Bounds="467,479,82,19" Id="EfjJ1Y72RqfM2gxfZGlIYf">
+            <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
+            </p:NodeReference>
+            <Pin Id="IkNB8RH8SU6MjHdJC0Jg1q" Name="Input" Kind="InputPin" />
+            <Pin Id="FaIf0MzdVGyOARbhjnY7sZ" Name="Path" Kind="InputPin" DefaultValue="image_id" />
+            <Pin Id="RbTGEAAPB4kNLWqYsNxDFz" Name="Value" Kind="OutputPin" />
+            <Pin Id="AchRfKLCZiHN2NKId7wfVb" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Link Id="HWZjGorGYJ3PecV5oa6gos" Ids="CgbfTu0ie6ZPlRcp8R1RiC,IkNB8RH8SU6MjHdJC0Jg1q" />
+          <Link Id="Sb9ixzq0qPiNPaT02Bb5Pj" Ids="RbTGEAAPB4kNLWqYsNxDFz,Iv16Zl9N3vDMSKpCgY2WTV" />
+          <Node Bounds="487,512,82,19" Id="FnaihC3Yvw0QZzivhjq5Ot">
+            <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XPathGetValue" />
+            </p:NodeReference>
+            <Pin Id="UgbxcxXYMQpQRQwmuvYSct" Name="Input" Kind="InputPin" />
+            <Pin Id="ChbZha503pNNiUWEXCqPsp" Name="Path" Kind="InputPin" DefaultValue="thumbnail/alt_text" />
+            <Pin Id="RXOCp3x1rLwO83jw3puo4F" Name="Value" Kind="OutputPin" />
+            <Pin Id="BJ8UvuCnMmAMiV6AmDM9v9" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Link Id="SHMAjvrgzgnPkhBmf9vkWT" Ids="CgbfTu0ie6ZPlRcp8R1RiC,UgbxcxXYMQpQRQwmuvYSct" />
+          <Link Id="H1t2xZiQmgyMjutqfPtVgh" Ids="RXOCp3x1rLwO83jw3puo4F,VuspdffamwULIvIiEHnuGd" />
+          <Pin Id="T6iyHzLuhhnLT39dBPK43T" Name="Output" Kind="OutputPin" Bounds="483,499" />
+          <Pin Id="D5T7DzXigbFMMEprFLdhZH" Name="Input" Kind="InputPin" Bounds="498,441" />
+        </Patch>
+      </Node>
+      <Overlay Id="NYcHehCzU8INdzpdKX6tu9" Name="Our custom datatypes" Bounds="372,46,279,172" />
+      <Overlay Id="V3szEeD8sfMMP5snDgBWQ3" Name="Nodes performing the queries" Bounds="35,46,303,237" />
     </Canvas>
     <!--
 
@@ -1705,7 +1705,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
-            <Pin Id="V6jEpEXQj57PVMGpAQsGOW" Name="Bounds" Kind="InputPin" DefaultValue="906, 234, 694, 438" />
+            <Pin Id="V6jEpEXQj57PVMGpAQsGOW" Name="Bounds" Kind="InputPin" DefaultValue="894, 194, 694, 438" />
             <Pin Id="NPgbVsJ5F2UNUmHe9AGapb" Name="Bound to Document" Kind="InputPin" DefaultValue="True" />
             <Pin Id="KVHy9onsfziOTWVVwhUFYO" Name="Input" Kind="InputPin" />
             <Pin Id="T7LsG3EVbwDNx84nURFOHt" Name="Color" Kind="InputPin" />
