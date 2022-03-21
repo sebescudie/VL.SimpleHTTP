@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="OaSqBynOd03ODGG1tRgHbg" LanguageVersion="2021.4.8.937" Version="0.128">
+  <Patch Id="VobCKxjpTwYODvgSxHZCjz">
+    <Canvas Id="EBfIO5ZJ6PRNQt5Q0znAOP" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="ELUUDO6yfsQQPmkcY2YBCY">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="DXgv1hooHFQNnPPxLM4gF4">
+        <Canvas Id="JGK1rFTzOgWLEkyO6Vvax2" CanvasType="Group">
+          <Node Bounds="355,306,85,19" Id="IocZ2Epai3mMXfnNPCSGbZ">
+            <p:NodeReference LastCategoryFullName="IO.HTTP" LastSymbolSource="VL.SimpleHTTP.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Request (Async Reactive)" />
+            </p:NodeReference>
+            <Pin Id="Q8m3tgM0vn2NZdY6hYfhVz" Name="URL" Kind="InputPin" />
+            <Pin Id="AJFJLu1AtXtNUqTXHpdfXu" Name="Headers" Kind="InputPin" />
+            <Pin Id="N5BwvQIi9pvMRtqdvxHCjj" Name="Body" Kind="InputPin" />
+            <Pin Id="NLgkWG5H13FM7FQLMbNcxj" Name="Method" Kind="InputPin" />
+            <Pin Id="Qcg8e8NbOEePu9NkbTpX2X" Name="Refresh" Kind="InputPin" />
+            <Pin Id="Fg5eJ0fcDq5L3RcNbeXbNC" Name="Result" Kind="OutputPin" />
+            <Pin Id="Uevb69TKeXCLluHD8lItfE" Name="In Progress" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="355,349,84,95" Id="TSBv3KcX1BnN0JqZZspgHD">
+            <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+              <Choice Kind="ProcessAppFlag" Name="ForEach" />
+              <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="RD2NWFLdijWN6TALiT8En3" Name="Messages" Kind="InputPin" />
+            <Pin Id="MRE1hcZ6VMMOSm3lQWLBXY" Name="Reset" Kind="InputPin" />
+            <Pin Id="Hx4CrsBrXDyPtr8vrKbCf5" Name="Result" Kind="OutputPin" />
+            <Patch Id="Ed9LQ8zYJwSOzfs6d6whcC" ManuallySortedPins="true">
+              <Patch Id="QLbrwto2Qy8NRL02urpMqh" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="AtTLNIlUPTENFTAuoJPC6k" Name="Update" ManuallySortedPins="true">
+                <Pin Id="CfJX5tgjsS0NznR8ZJY5FV" Name="Input 1" Kind="InputPin" />
+                <Pin Id="MKWVIUIi1AIQd2s9wlB8ws" Name="Output" Kind="OutputPin" />
+              </Patch>
+              <ControlPoint Id="FWiPL0MtpSyPBrFGNg2h6P" Bounds="359,357" />
+              <ControlPoint Id="IPxcYDagjSiLmJXtN66mF0" Bounds="359,437" />
+            </Patch>
+          </Node>
+        </Canvas>
+        <Patch Id="C9VUuxwDXK0Muw2CPyD5e7" Name="Create" />
+        <Patch Id="OojNzXumWUIQQVWdN1mJyX" Name="Update" />
+        <ProcessDefinition Id="RbDoFtTnKjGQZqqoWw1osh">
+          <Fragment Id="UQJC4ytpWCsPMI5ms7b1KY" Patch="C9VUuxwDXK0Muw2CPyD5e7" Enabled="true" />
+          <Fragment Id="Fdcd0uQPD1cP0x5QVVJyPY" Patch="OojNzXumWUIQQVWdN1mJyX" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="GmJ7jLJlqR3PoCj9sFiJGT" Ids="CfJX5tgjsS0NznR8ZJY5FV,FWiPL0MtpSyPBrFGNg2h6P" IsHidden="true" />
+        <Link Id="EH6nwwM7G0rM2XLTWOOfKe" Ids="IPxcYDagjSiLmJXtN66mF0,MKWVIUIi1AIQd2s9wlB8ws" IsHidden="true" />
+        <Link Id="Ja8R9GhxPOnMkghaAZDObp" Ids="Fg5eJ0fcDq5L3RcNbeXbNC,RD2NWFLdijWN6TALiT8En3" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="P0tvu6YEA2XNMO9JIGi5Rc" Location="VL.CoreLib" Version="2021.4.8-0937-g24dbdf088c" />
+  <NugetDependency Id="Qru5pEyQJFLPRBJ9LueX9o" Location="VL.SimpleHTTP" Version="0.0.0.0" />
+</Document>
